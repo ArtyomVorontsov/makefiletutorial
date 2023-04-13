@@ -122,7 +122,7 @@ Whew, what a mouthful. **Make sure that you understand this. It's the crux of Ma
 The following Makefile ultimately runs all three targets. When you run `make` in the terminal, it will build a program called `blah` in a series of steps:
 - Make selects the target `blah`, because the first target is the default target
 - `blah` requires `blah.o`, so make searches for the `blah.o` target
-- `blah.o` requires `blah.c`, so make searches for the `blah.c` target
+- `blah.o` requires `blah.c`, so make searches for the `blah.c` targetn
 - `blah.c` has no dependencies, so the `echo` command is run
 - The `cc -c` command is then run, because all of the `blah.o` dependencies are finished
 - The top `cc` command is run, because all the `blah` dependencies are finished
@@ -822,9 +822,6 @@ endif
 <!-- `(Section 7.3) -->
 This example shows you how to test make flags with `findstring` and `MAKEFLAGS`. Run this example with `make -i` to see it print out the echo statement.
 ```makefile
-bar =
-foo = $(bar)
-
 all:
 # Search for the "-i" flag. MAKEFLAGS is just a list of single characters, one per flag. So look for "i" in this case.
 ifneq (,$(findstring i, $(MAKEFLAGS)))
